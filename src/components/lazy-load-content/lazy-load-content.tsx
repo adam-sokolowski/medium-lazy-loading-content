@@ -1,34 +1,22 @@
-import { Component, h, Prop, State, Watch } from '@stencil/core';
+import { Component, h, State } from '@stencil/core';
 import { Element, Host, HostElement } from '@stencil/core/internal';
 
 @Component({
   tag: 'lazy-load-content',
 })
 export class LazyLoadContent {
+
   @Element() hostElement: HostElement;
 
-  @State() elementId: string;
+  @State() elementId = '';
   @State() isIntersecting: boolean;
   @State() contentInnerHTML: string;
-  @State() wasLoadedBefore: boolean; // Variable registering content loading
-
-  @Prop({ attribute: 'cold' }) preventRerender = false; // Prop preventing re-render once loaded slot content
-
-  @Watch('isIntersecting')
-  onIsIntersectingChange(newValue: boolean) {
-    if (!newValue) {
-      return;
-    }
-
-    this.wasLoadedBefore = true;
-    // Set to true when content is loader for the first time
-  }
 
   intersectionObserver: IntersectionObserver;
   lazyElement: HTMLElement;
 
   componentWillLoad(): void {
-    this.elementId = 'test_id';
+    this.elementId = '...generate_random_id';
     this.contentInnerHTML = this.hostElement.querySelector('[slot="content"]').innerHTML;
   }
 
@@ -37,7 +25,6 @@ export class LazyLoadContent {
 
     this.intersectionObserver = new IntersectionObserver(elements => {
       this.isIntersecting = elements[0].isIntersecting;
-      console.info(this.isIntersecting);
     });
 
     this.intersectionObserver.observe(this.lazyElement);
@@ -51,7 +38,7 @@ export class LazyLoadContent {
     return (
       <Host
         id={this.elementId}
-        innerHTML={ (this.wasLoadedBefore && this.preventRerender) || this.isIntersecting ? this.contentInnerHTML : ''}
+        innerHTML={ this.isIntersecting ? this.contentInnerHTML : ''}
       />
     );
   }
