@@ -1,5 +1,5 @@
 {
-  "name": "medium-web-components-loader",
+  "name": "medium-lazy-load-content-loader",
   "private": true,
   "typings": "./index.d.ts",
   "module": "./index.js",

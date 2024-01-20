@@ -6,72 +6,34 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
-    /**
-     * MediumButton web component
-     * <medium-button />
-     */
-    interface MediumButton {
-        /**
-          * Enables disabled state
-         */
-        "isDisabled": boolean;
-        /**
-          * Enables loading effect
-         */
-        "isLoading": boolean;
-        /**
-          * Button label
-         */
-        "label": string;
+    interface LazyLoadContent {
+        "preventRerender": boolean;
     }
 }
 declare global {
-    /**
-     * MediumButton web component
-     * <medium-button />
-     */
-    interface HTMLMediumButtonElement extends Components.MediumButton, HTMLStencilElement {
+    interface HTMLLazyLoadContentElement extends Components.LazyLoadContent, HTMLStencilElement {
     }
-    var HTMLMediumButtonElement: {
-        prototype: HTMLMediumButtonElement;
-        new (): HTMLMediumButtonElement;
+    var HTMLLazyLoadContentElement: {
+        prototype: HTMLLazyLoadContentElement;
+        new (): HTMLLazyLoadContentElement;
     };
     interface HTMLElementTagNameMap {
-        "medium-button": HTMLMediumButtonElement;
+        "lazy-load-content": HTMLLazyLoadContentElement;
     }
 }
 declare namespace LocalJSX {
-    /**
-     * MediumButton web component
-     * <medium-button />
-     */
-    interface MediumButton {
-        /**
-          * Enables disabled state
-         */
-        "isDisabled"?: boolean;
-        /**
-          * Enables loading effect
-         */
-        "isLoading"?: boolean;
-        /**
-          * Button label
-         */
-        "label"?: string;
+    interface LazyLoadContent {
+        "preventRerender"?: boolean;
     }
     interface IntrinsicElements {
-        "medium-button": MediumButton;
+        "lazy-load-content": LazyLoadContent;
     }
 }
 export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
-            /**
-             * MediumButton web component
-             * <medium-button />
-             */
-            "medium-button": LocalJSX.MediumButton & JSXBase.HTMLAttributes<HTMLMediumButtonElement>;
+            "lazy-load-content": LocalJSX.LazyLoadContent & JSXBase.HTMLAttributes<HTMLLazyLoadContentElement>;
         }
     }
 }

@@ -1293,15 +1293,15 @@
     mkdirp "^1.0.4"
     rimraf "^3.0.2"
 
-"@stencil/core@~2.22.0":
-  version "2.22.1"
-  resolved "https://registry.yarnpkg.com/@stencil/core/-/core-2.22.1.tgz#dee491335024200abae8572661f78094a09973fe"
-  integrity sha512-L4EsWLXYkg24BfrR3aS1df3BSkH0RFyza+Tu84MaYoF2csiKTJxDTZuFHSnJeF8UdgzV7CBfnsIEV6r3s0+h3g==
+"@stencil/core@~4.10.0":
+  version "4.10.0"
+  resolved "https://registry.yarnpkg.com/@stencil/core/-/core-4.10.0.tgz#cafdaee8e1120912b9ab028d7b76fbdcc5ba2af4"
+  integrity sha512-7lDTPY1IxXN2/C+wQPHt3e/dYgY4YgelA8MxOsU3ZftXtpzWad/QNWhSAtKisJMrSjQh41jMDOgD0yLBwV6E7w==
 
-"@stencil/sass@~2.0.0":
-  version "2.0.3"
-  resolved "https://registry.yarnpkg.com/@stencil/sass/-/sass-2.0.3.tgz#39da1488dd811ec523b4b59f2f0053693cc09145"
-  integrity sha512-ypS+0f6bJH2qXqrNAHirlYOWFax+qKKOIePLs7cu4LfKFr4ZVJSGRFBdgaeRrZMUhJWnhjV6io2uDldhrQhnMg==
+"@stencil/sass@~3.0.0":
+  version "3.0.8"
+  resolved "https://registry.yarnpkg.com/@stencil/sass/-/sass-3.0.8.tgz#5140382dd7cdf05cc01898f4cfae2ff066dd8afd"
+  integrity sha512-QJUG4Dr/b3wSizViwQXorrk1PJzxOsKkq5hSqtUHc3NNG3iomC4DQFYGeu15yNfoCDBtt4qkyHSCynsekQ8F6A==
 
 "@stencil/utils@^0.0.5":
   version "0.0.5"
